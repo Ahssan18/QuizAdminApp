@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Rewarding Admin App</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_referral_info">ReferralInfo</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="withdraw_requests">Withdraw Requests</string>
+    <string name="users">Users</string>
+    <string name="settings">Settings</string>
+    <string name="withdraw_info">Withdraw Info</string>
+    <string name="ads_info">Ads Info</string>
+    <string name="referral_info">Referral Info</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="quiz_question">Quiz Question</string>
+    <string name="image">Image</string>
+    <string name="minimum_withdraw_limit">Minimum Withdraw Limit</string>
+    <string name="points_conversion">Points Conversion</string>
+    <string name="update">Update</string>
+    <string name="questions">Questions</string>
+    <string name="add_quiz_question">Add Quiz Question</string>
+    <string name="referrer_bonus">Referrer Bonus</string>
+    <string name="referral_getter_bonus">Referral Getter Bonus</string>
+    <string name="banner_ad_id">Banner Ad Id</string>
+    <string name="interstitial_ad_id">Interstitial Ad Id</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="question">Question</string>
+    <string name="option_a">Option A</string>
+    <string name="option_b">Option B</string>
+    <string name="option_c">Option C</string>
+    <string name="option_d">Option D</string>
+    <string name="answer">Answer</string>
+    <string name="add_question">Add Question</string>
+    <string name="article">Articles</string>
+</resources>

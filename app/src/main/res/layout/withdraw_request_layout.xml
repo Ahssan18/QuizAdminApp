@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_90sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginStart="@dimen/_20sdp"
+    android:layout_marginEnd="@dimen/_20sdp"
+    android:layout_marginTop="@dimen/_10sdp"
+    app:cardElevation="@dimen/_10sdp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/wallet_icon"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:src="@drawable/ic_wallet"
+            app:tint="@color/black"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_20sdp"/>
+
+        <TextView
+            android:id="@+id/withdraw_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Unpaid"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="@dimen/_8sdp"
+            android:textColor="@color/red"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"/>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_paid"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            app:strokeColor="@color/green"
+            android:text="Pay"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/green"
+            android:textSize="@dimen/_8sdp"/>
+
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_toEndOf="@id/wallet_icon"
+            android:fontFamily="@font/poppins_regular"
+            android:text="User"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16sdp" />
+
+        <TextView
+            android:id="@+id/user_paypal_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Payapl = 1234556778"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/black"
+            android:layout_below="@id/user_name"
+            android:layout_toEndOf="@id/wallet_icon"
+            android:layout_marginStart="@dimen/_10sdp"/>
+
+        <TextView
+            android:id="@+id/points_to_withdraw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_paypal_id"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_toEndOf="@id/wallet_icon"
+            android:fontFamily="@font/poppins_regular"
+            android:text="100 points"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/withdraw_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_below="@id/points_to_withdraw"
+            android:fontFamily="@font/poppins_light"
+            android:textSize="@dimen/_8sdp"/>
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>
