@@ -32,10 +32,10 @@
             android:id="@+id/quiz_question_btn"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_45sdp"
+            android:fontFamily="@font/poppins_regular"
             android:text="@string/quiz_question"
             app:icon="@drawable/ic_news"
-            app:iconGravity="textStart"
-            android:fontFamily="@font/poppins_regular"/>
+            app:iconGravity="textStart" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/article_btn"
@@ -93,8 +93,8 @@
                         android:layout_height="@dimen/_45sdp"
                         android:layout_below="@id/text_user"
                         android:layout_marginStart="@dimen/_15sdp"
-                        android:src="@drawable/ic_user"
-                        android:contentDescription="@string/image"/>
+                        android:contentDescription="@string/image"
+                        android:src="@drawable/ic_user" />
 
                     <TextView
                         android:id="@+id/total_users"

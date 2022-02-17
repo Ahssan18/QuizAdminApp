@@ -1,9 +1,11 @@
 package com.ncodelab.adminapp.activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
@@ -24,6 +27,7 @@ import com.ncodelab.adminapp.R;
 public class AdminLoginActivity extends AppCompatActivity {
 
 
+    public String TAG="AdminLoginActivity";
     TextInputLayout usernameInput,passwordInput;
     MaterialButton loginBtn;
     FirebaseFirestore database;
@@ -91,6 +95,11 @@ public class AdminLoginActivity extends AppCompatActivity {
                 }
 
 
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.e(TAG,"Exception => "+e.getMessage());
             }
         });
 

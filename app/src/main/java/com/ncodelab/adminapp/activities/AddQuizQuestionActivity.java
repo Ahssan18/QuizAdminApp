@@ -57,16 +57,16 @@ public class AddQuizQuestionActivity extends AppCompatActivity {
     public void initializeViews(){
 
 
-        questionInput = findViewById(R.id.question_input);
 
+        questionInput = findViewById(R.id.question_input);
         optionAInput = findViewById(R.id.option_a_input);
         optionBInput = findViewById(R.id.option_b_input);
         optionCInput = findViewById(R.id.option_c_input);
         optionDInput = findViewById(R.id.option_d_input);
-
         answerInput = findViewById(R.id.answer_input);
-
         addQuestionBtn = findViewById(R.id.add_question_btn);
+
+
 
     }
 
@@ -74,14 +74,18 @@ public class AddQuizQuestionActivity extends AppCompatActivity {
 
         DocumentReference documentReference = database.collection("Stats").document("stats");
 
-        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
+        try {
+            documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                @Override
+                public void onSuccess(DocumentSnapshot documentSnapshot) {
 
-                totalQuestions = documentSnapshot.getLong("totalQuestions");
+                    totalQuestions = documentSnapshot.getLong("totalQuestions");
 
-            }
-        });
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
     }
@@ -109,32 +113,35 @@ public class AddQuizQuestionActivity extends AppCompatActivity {
         QuizQuestion quizQuestion = new QuizQuestion(question,optionA,optionB,optionC,optionD,answer,++totalQuestions);
 
         //Adding Question
-        database.collection("QuizQuestions").document()
-                .set(quizQuestion)
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()){
+        try {
+            database.collection("QuizQuestions").document()
+                    .set(quizQuestion)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()){
 
-                            displaySuccessfulToast("Question Added");
+                                displaySuccessfulToast("Question Added");
 
-                            database.collection("Stats").document("stats")
-                                    .update("totalQuestions", FieldValue.increment(1));
+                                database.collection("Stats").document("stats")
+                                        .update("totalQuestions", FieldValue.increment(1));
 
-                            questionInput.getEditText().setText("");
-                            optionAInput.getEditText().setText("");
-                            optionBInput.getEditText().setText("");
-                            optionCInput.getEditText().setText("");
-                            optionDInput.getEditText().setText("");
-                            answerInput.getEditText().setText("");
+                                questionInput.getEditText().setText("");
+                                optionAInput.getEditText().setText("");
+                                optionBInput.getEditText().setText("");
+                                optionCInput.getEditText().setText("");
+                                optionDInput.getEditText().setText("");
+                                answerInput.getEditText().setText("");
 
+                            }
+                            else {
+                                Log.d("FIRESTORE_ERROR","DATABASE_ERROR = "+task.getException().toString());
+                            }
                         }
-                        else {
-                            Log.d("FIRESTORE_ERROR","DATABASE_ERROR = "+task.getException().toString());
-                        }
-                    }
-                });
-
+                    });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
     }
