@@ -78,4 +78,16 @@ public class QuizQuestion {
         this.index = index;
     }
 
+    @Override
+    public String toString() {
+        return "QuizQuestion{" +
+                "question='" + question + '\'' +
+                ", optionA='" + optionA + '\'' +
+                ", optionB='" + optionB + '\'' +
+                ", optionC='" + optionC + '\'' +
+                ", optionD='" + optionD + '\'' +
+                ", answer='" + answer + '\'' +
+                ", index=" + index +
+                '}';
+    }
 }

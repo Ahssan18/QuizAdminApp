@@ -76,13 +76,23 @@
             android:id="@+id/answer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Answer"
-            android:fontFamily="@font/poppins_regular"
-            android:textColor="@color/green"
             android:layout_below="@id/question"
-            android:layout_toEndOf="@id/options_layout"
             android:layout_marginStart="@dimen/_20sdp"
-            android:layout_marginTop="@dimen/_40sdp"/>
+            android:layout_marginTop="@dimen/_40sdp"
+            android:layout_toEndOf="@id/options_layout"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Answer"
+            android:textColor="@color/green" />
+
+        <ImageView
+            android:id="@+id/iv_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/ic_delete"
+            app:tint="@android:color/holo_red_dark" />
 
 
 

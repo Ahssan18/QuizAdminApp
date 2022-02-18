@@ -1,9 +1,11 @@
 package com.ncodelab.adminapp.adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,6 +21,7 @@ public class TotalQuizAdapter extends RecyclerView.Adapter<TotalQuizAdapter.Tota
 
     Context context;
     ArrayList<QuizQuestion> questionArrayList;
+    private String TAG="TotalQuizAdapter";
 
     public TotalQuizAdapter(Context context, ArrayList<QuizQuestion> questionArrayList) {
         this.context = context;
@@ -38,14 +41,12 @@ public class TotalQuizAdapter extends RecyclerView.Adapter<TotalQuizAdapter.Tota
     public void onBindViewHolder(@NonNull TotalQuizAdapter.TotalQuizViewHolder holder, int position) {
 
         QuizQuestion quizQuestion = questionArrayList.get(position);
-
+        Log.e(TAG,"onBindViewHolder => "+quizQuestion.toString() );
         holder.question.setText(quizQuestion.getQuestion());
-
         holder.optionA.setText(quizQuestion.getOptionA());
         holder.optionB.setText(quizQuestion.getOptionB());
         holder.optionC.setText(quizQuestion.getOptionC());
         holder.optionD.setText(quizQuestion.getOptionD());
-
         holder.answer.setText(quizQuestion.getAnswer());
 
 
@@ -59,6 +60,7 @@ public class TotalQuizAdapter extends RecyclerView.Adapter<TotalQuizAdapter.Tota
     public class TotalQuizViewHolder extends RecyclerView.ViewHolder {
 
         TextView question,optionA,optionB,optionC,optionD,answer;
+        ImageView ivDelete;
 
         public TotalQuizViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -69,6 +71,7 @@ public class TotalQuizAdapter extends RecyclerView.Adapter<TotalQuizAdapter.Tota
             optionB = itemView.findViewById(R.id.option_b);
             optionC = itemView.findViewById(R.id.option_c);
             optionD = itemView.findViewById(R.id.option_d);
+            ivDelete = itemView.findViewById(R.id.iv_delete);
 
             answer = itemView.findViewById(R.id.answer);
 

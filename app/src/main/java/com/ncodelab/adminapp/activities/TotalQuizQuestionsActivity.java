@@ -24,6 +24,7 @@ import java.util.ArrayList;
 
 public class TotalQuizQuestionsActivity extends AppCompatActivity {
 
+    private static final String TAG = "TotalQuizQuestions";
     RecyclerView quizQuestionRecyclerview;
     ArrayList<QuizQuestion> quizQuestionArrayList;
     TotalQuizAdapter totalQuizAdapter;
@@ -79,7 +80,7 @@ public class TotalQuizQuestionsActivity extends AppCompatActivity {
                         }
                         else {
                             for (DocumentChange dc: value.getDocumentChanges()){
-
+                                Log.e(TAG,"DataChangeListener QuizQuestions =>"+dc.getDocument().toString());
                                 if (dc.getType() == DocumentChange.Type.ADDED){
 
                                     quizQuestionArrayList.add(dc.getDocument().toObject(QuizQuestion.class));

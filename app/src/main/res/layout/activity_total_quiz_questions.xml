@@ -22,6 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/title"
+        tools:listitem="@layout/total_quiz_layout"
         android:layout_above="@id/add_article_btn"/>
 
     <com.google.android.material.button.MaterialButton
