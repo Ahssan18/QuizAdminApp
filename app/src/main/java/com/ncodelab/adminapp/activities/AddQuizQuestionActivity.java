@@ -110,12 +110,12 @@ public class AddQuizQuestionActivity extends AppCompatActivity {
         optionD = optionDInput.getEditText().getText().toString();
         answer = answerInput.getEditText().getText().toString();
 
-        QuizQuestion quizQuestion = new QuizQuestion(question,optionA,optionB,optionC,optionD,answer,++totalQuestions);
 
         //Adding Question
         try {
-            database.collection("QuizQuestions").document()
-                    .set(quizQuestion)
+            String id=database.collection("QuizQuestions").document().getId();
+            QuizQuestion quizQuestion = new QuizQuestion(question,optionA,optionB,optionC,optionD,answer,++totalQuestions,id);
+            database.collection("QuizQuestions").document(id).set(quizQuestion)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {

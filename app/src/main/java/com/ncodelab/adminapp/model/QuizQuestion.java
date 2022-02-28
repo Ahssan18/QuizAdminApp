@@ -6,13 +6,14 @@ import java.util.Date;
 
 public class QuizQuestion {
 
-    private String question,optionA,optionB,optionC,optionD,answer;
+    private String question,optionA,optionB,optionC,optionD,answer,id;
     private long index;
 
     public QuizQuestion() {
     }
 
-    public QuizQuestion(String question, String optionA, String optionB, String optionC, String optionD, String answer, long index) {
+    public QuizQuestion(String question, String optionA, String optionB, String optionC, String optionD, String answer, long index,String id) {
+        this.id = id;
         this.question = question;
         this.optionA = optionA;
         this.optionB = optionB;
@@ -89,5 +90,13 @@ public class QuizQuestion {
                 ", answer='" + answer + '\'' +
                 ", index=" + index +
                 '}';
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

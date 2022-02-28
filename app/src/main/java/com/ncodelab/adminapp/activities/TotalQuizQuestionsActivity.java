@@ -82,11 +82,9 @@ public class TotalQuizQuestionsActivity extends AppCompatActivity {
                             for (DocumentChange dc: value.getDocumentChanges()){
                                 Log.e(TAG,"DataChangeListener QuizQuestions =>"+dc.getDocument().toString());
                                 if (dc.getType() == DocumentChange.Type.ADDED){
-
                                     quizQuestionArrayList.add(dc.getDocument().toObject(QuizQuestion.class));
                                 }
                                 if (dc.getType() == DocumentChange.Type.REMOVED){
-
                                     quizQuestionArrayList.remove(dc.getDocument().toObject(QuizQuestion.class));
                                 }
                                 totalQuizAdapter.notifyDataSetChanged();
